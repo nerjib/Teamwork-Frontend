@@ -32,7 +32,7 @@ class GetOneArticle extends React.Component {
       {Object.keys(this.state.response).map(item => (
        
        <div className="Article-block" key={item}>
-        <div>{this.state.response[item].title}</div><p>{this.state.response[item].article}</p>
+        <div >{this.state.response[item].title}</div><p>{this.state.response[item].article}</p>
           
           </div>
            
