@@ -1,0 +1,11 @@
+.Container{
+border-radius: 5vh;
+background-color: turquoise;
+}
+
+.table{
+    background-color: thistle;
+    position: relative;
+    text-align: center;
+    padding: 50%,50%;
+}
