@@ -13,7 +13,11 @@
      border-radius: 2vh;
  }
  .comment-title{
+    color: rgb(24, 39, 39);
      grid-area: 2/1;
+ }
+ .Article-title{
+    color: rgb(96, 167, 167);
  }
  .Comment-block{
      grid-area: 3/4;

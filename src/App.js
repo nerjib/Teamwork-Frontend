@@ -3,6 +3,8 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import Home from './Home'
 import GetOneArticle from './GetOneArticle'
+import withAuth from './withAuth';
+import withAuth2 from './withAuth2';
 
 
 
@@ -20,9 +22,11 @@ function App() {
       <div>
       
         <Switch>
+        <Route path="/" exact component={(Login)} />
           <Route path="/login" exact component={Login} />
-          <Route path="/home" exact component={Home} />
+          <Route path="/home" component={withAuth2(Home)} />
           <Route path="/articles/:id" component={(GetOneArticle)} />
+          <Route path="/feeds" component={(Home)} />
 
         </Switch>
       </div>
