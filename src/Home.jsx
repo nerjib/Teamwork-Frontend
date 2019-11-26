@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { green, visible } from 'ansi-colors';
 import './Home.css';
 import ArcticleList from './ArticleList'
+import PostArticle from './PostArticle';
 
 
 
@@ -45,7 +46,7 @@ export default class Home extends Component {
         <div className="Search-block">
          </div>
          <div className='Post-article' >
-           
+         <  PostArticle/>
            </div>
       </div>
     );
