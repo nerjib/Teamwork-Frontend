@@ -1,7 +1,7 @@
 import React from 'react';
 
-import './Article.css'
-class Article extends React.Component {
+import './getOneArticle.css'
+class GetOneArticle extends React.Component {
     constructor() {
         super();
         this.state = {
@@ -56,4 +56,4 @@ class Article extends React.Component {
 
   }
 }
-export default Article
+export default GetOneArticle

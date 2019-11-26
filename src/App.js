@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, Route, Switch } from 'react-router-dom';
 import Login from './Login';
 import Home from './Home'
+import GetOneArticle from './GetOneArticle'
 
 
 
@@ -21,6 +22,7 @@ function App() {
         <Switch>
           <Route path="/login" exact component={Login} />
           <Route path="/home" exact component={Home} />
+          <Route path="/articles/:id" component={(GetOneArticle)} />
 
         </Switch>
       </div>
