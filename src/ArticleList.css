@@ -8,6 +8,10 @@
     grid-template-rows: 1fr 1fr auto;
    
 }
+.image{
+    width: 30vh;
+    height: 30vh;
+}
 .view{
     grid-area: 3/2;
 }
