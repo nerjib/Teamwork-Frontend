@@ -24,9 +24,9 @@ export default class GifsList extends React.Component{
        <div className="profile">user: {gifs[item].userid}</div>
        <div className="Article-title">{gifs.title}</div>
 
-        <div className="Article-main"><img className='image' alt='img' src={gifs[item].gifurl}></img></div>
-         <br/><Link className="Fullview" to={`/articles/${gifs[item].id}`} >view
-         </Link> <Link className="comment" to={`/articles/${gifs[item].id}`}>comments</Link>
+        <div className="Article-main"><img className = 'image' alt = {gifs[item].id} src= {gifs[item].gifurl}></img></div>
+         <br/><Link className = "view" to={`/gifs/${gifs[item].id}`} >Fullview
+         </Link> <Link className = "comment" to = {`/gifs/${gifs[item].id}`}>comments</Link>
               <div>{gifs[item].createdon}</div>
  
          </div>

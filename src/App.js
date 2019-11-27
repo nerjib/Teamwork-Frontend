@@ -6,8 +6,8 @@ import GetOneArticle from './GetOneArticle'
 import withAuth from './withAuth';
 import withAuth2 from './withAuth2';
 import CreateUser from './CreateUser';
-import WithAuthRole from './WithAuthRole'
-
+import WithAuthRole from './WithAuthRole';
+import GetOneGif from './GetOneGif';
 
 
 import './App.css';
@@ -28,6 +28,7 @@ function App() {
           <Route path="/login" exact component={Login} />
           <Route path="/home" component={withAuth2(Home)} />
           <Route path="/articles/:id" component={(GetOneArticle)} />
+          <Route path="/gifs/:id" component={(GetOneGif)} />
           <Route path="/feeds" component={(Home)} />
           <Route path="/create-user" component={WithAuthRole(CreateUser)}/>
 
