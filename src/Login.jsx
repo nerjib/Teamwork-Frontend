@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
+import { Link, Route, Redirect } from 'react-router-dom';
 import './Login.css'
 
 export default class Login extends Component {
   constructor(props) {
     super(props)
+    let login = 'stop';
     this.state = {
       email : '',
-      password: ''
+      password: '',
+      login,
     };
   }
 
@@ -29,19 +32,33 @@ export default class Login extends Component {
     .then(res => {
       console.log(res.status);
       if (res.status === 200) {
-        this.props.history.push('/home');
+       // return < Redirect to="/home"/>
+
+       this.setState({
+         login: 'pass'
+        });
+        localStorage.setItem('login', this.state.login);
+
+       // return < Redirect to="/home"/>
+              // this.props.history.push('/home');
       } else {
+        localStorage.setItem('login', 'stop');
         const error = new Error(res.error);
         throw error;
       }
     })
     .catch(err => {
       console.error(err);
+      localStorage.setItem('login', 'stop');
+
       alert('Error logging in please try again');
     });
   }
 
   render() {
+    if (this.state.login === 'pass'){
+      return <Redirect to='/home'> </Redirect>
+    }
     return (
       <div >
       <form className="Container" onSubmit={this.onSubmit}>

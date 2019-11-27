@@ -3,6 +3,7 @@ import { green, visible } from 'ansi-colors';
 import './Home.css';
 import ArcticleList from './ArticleList'
 import PostArticle from './PostArticle';
+import { Link, Route, Redirect } from 'react-router-dom';
 
 
 
@@ -10,14 +11,24 @@ import PostArticle from './PostArticle';
 export default class Home extends Component {
   constructor() {
     super();
-    this.state = {
+  
+    const access = localStorage.getItem('login');
+   
+
+    
+       this.state = {
       message: 'Loading...',
-      message2: 'ddd'
+      message2: 'ddd',
+      login: access,
     }
+    
+    if(access !== 'pass'){
+      this.setState({login: 'stop'})
+    }
+    
   }
   
   componentDidMount() {
-  
     fetch('/api/v1/articles')
       .then(res => res.json())
       .then(res => this.setState({message: res.rows}));
@@ -30,14 +41,21 @@ export default class Home extends Component {
 
   
     render() {
+      if (this.state.login !== 'pass'){
+      return <Redirect to='/login'></Redirect>
+      };
+     
  
     return (
       <div className='container'>
         <div className="Menu-block">
           Board
           <div className="Menu-list">
-          <li >private message</li>
-          <li >Current Sprint</li>
+           <div>
+            <Link To="/create-user">Create user</Link>
+            </div>
+          private message
+          Current Sprint
           </div>
         </div>
       <div className="Articles-block">
