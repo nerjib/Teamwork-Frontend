@@ -5,7 +5,8 @@ import Home from './Home'
 import GetOneArticle from './GetOneArticle'
 import withAuth from './withAuth';
 import withAuth2 from './withAuth2';
-import Users from './User'
+import CreateUser from './CreateUser';
+import WithAuthRole from './WithAuthRole'
 
 
 
@@ -28,7 +29,7 @@ function App() {
           <Route path="/home" component={withAuth2(Home)} />
           <Route path="/articles/:id" component={(GetOneArticle)} />
           <Route path="/feeds" component={(Home)} />
-          <Route path="/create-user" component={(Users)} />
+          <Route path="/create-user" component={WithAuthRole(CreateUser)}/>
 
         </Switch>
       </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 
-export default function withAuth(ComponentToProtect) {
+export default function withAuthRole(ComponentToProtect) {
   return class extends Component {
     constructor() {
       super();
@@ -12,7 +12,7 @@ export default function withAuth(ComponentToProtect) {
     }
 
     componentDidMount() {
-      fetch('/api/v1/checktoken')
+      fetch('/api/v1/checkrole')
         .then(res => {
           if (res.status === 200) {
             this.setState({ loading: false });
@@ -34,6 +34,7 @@ export default function withAuth(ComponentToProtect) {
         return null;
       }
       if (redirect) {
+        alert('You are not authorize')
         return <Redirect to="/feeds" />;
       }
       return <ComponentToProtect {...this.props} />;

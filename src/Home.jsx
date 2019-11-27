@@ -52,7 +52,7 @@ export default class Home extends Component {
           Board
           <div className="Menu-list">
            <div>
-            <Link To="/create-user">Create user</Link>
+            <Link to="/create-user">Create user</Link>
             </div>
           private message
           Current Sprint
