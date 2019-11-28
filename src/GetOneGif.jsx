@@ -1,4 +1,5 @@
 import React from 'react';
+import CommentGif from './CommentGif'
 
 import './getOneArticle.css'
 class GetOneGif extends React.Component {
@@ -6,7 +7,8 @@ class GetOneGif extends React.Component {
         super();
         this.state = {
           response: 'Loading...',
-          response1: 'Loading...'
+          response1: 'Loading...',
+          gifId: '',
 
         }
       }
@@ -15,7 +17,10 @@ class GetOneGif extends React.Component {
         const { params } = this.props.match;
         fetch("/api/v1/gifs/"+params.id)
         .then(res => res.json())
-      .then(res => this.setState({response: res.data.rows}));
+      .then(res => this.setState({
+        response: res.data.rows,
+        gifId: params.id,
+      }));
   
       fetch("/api/v1/gifs/"+params.id)
       .then(res => res.json())
@@ -37,6 +42,7 @@ class GetOneGif extends React.Component {
           </div>
            
         ))}
+        <CommentGif gifId={this.state.gifId}/>
       </ul>
       <div className="comment-title" >Comments</div>
       <div >

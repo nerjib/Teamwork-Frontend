@@ -28,6 +28,7 @@ export default class ArticleList extends React.Component{
         <div className="Article-main">{this.props.Amessage[item].article}</div>
          <br/><Link className="view" to={`/articles/${this.props.Amessage[item].id}`} >view
          </Link> <Link className="comment" to={`/articles/${this.props.Amessage[item].id}`}>comments</Link>
+         <Link className="delete" to={`/deletearticle/${this.props.Amessage[item].id}`}>delete</Link>
               <div>{this.props.Amessage[item].createdon}</div>
  
          </div>

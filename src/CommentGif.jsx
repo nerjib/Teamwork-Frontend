@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
-import { Link, Route, Redirect } from 'react-router-dom';
-import paramCase from 'param-case';
 
-export default class Comment extends Component {
+export default class CommentGif extends Component {
   constructor(props) {
     super(props)
     this.state = {
       comment : '',
-      status: '',
+        status: '',
     };
   }
 
@@ -20,7 +18,7 @@ export default class Comment extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    fetch('/api/v1/articles/'+this.props.articleId+'/comment', {
+    fetch('/api/v1/gifs/'+this.props.gifId+'/comment', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {
@@ -58,7 +56,7 @@ export default class Comment extends Component {
           required
         /></td></tr>
        <tr><td>        <input type="submit" value="Post"/>
-    {this.state.status}</td></tr></table></div>  </form>
+       {this.state.status}</td></tr></table></div>  </form>
       </div>
     );
   }
