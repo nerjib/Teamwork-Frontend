@@ -7,7 +7,7 @@ export default class Comment extends Component {
     super(props)
     this.state = {
       comment : '',
-     
+      status: '',
     };
   }
 
@@ -30,7 +30,8 @@ export default class Comment extends Component {
     .then(res => {
       if (res.status === 201) {
         this.setState({
-            status: 'Success'
+            status: 'Success',
+            comment: '',
         });
       } else {
         const error = new Error(res.error);
@@ -57,7 +58,7 @@ export default class Comment extends Component {
           required
         /></td></tr>
        <tr><td>        <input type="submit" value="Post"/>
-    </td></tr></table></div>  </form>
+    {this.state.status}</td></tr></table></div>  </form>
       </div>
     );
   }

@@ -8,6 +8,7 @@ import withAuth2 from './withAuth2';
 import CreateUser from './CreateUser';
 import WithAuthRole from './WithAuthRole';
 import GetOneGif from './GetOneGif';
+import DeleteArticle from './DeleteArticle';
 
 
 import './App.css';
@@ -31,6 +32,7 @@ function App() {
           <Route path="/gifs/:id" component={(GetOneGif)} />
           <Route path="/feeds" component={(Home)} />
           <Route path="/create-user" component={WithAuthRole(CreateUser)}/>
+          <Route path="/deletearticle/:id" component={(DeleteArticle)}/>
 
         </Switch>
       </div>
