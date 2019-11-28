@@ -21,8 +21,8 @@
   "eslintConfig": {
     "extends": "react-app"
   },
-  "proxy1": "https://powerful-garden-82332.herokuapp.com",
-  "proxy": "http://localhost:5000",
+  "proxy": "https://powerful-garden-82332.herokuapp.com",
+  "proxy1": "http://localhost:5000",
   "browserslist": {
     "production": [
       ">0.2%",
