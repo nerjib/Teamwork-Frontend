@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8d13d2875171a9557ce7cc8f5842f4ae",
+    "revision": "6e833dc3fe3078797da24235217a8932",
     "url": "/Teamwork-Frontend/index.html"
   },
   {
-    "revision": "89d1684f38b071693e73",
+    "revision": "e8ee92558941d50bcf71",
     "url": "/Teamwork-Frontend/static/css/main.7c3c4435.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/Teamwork-Frontend/static/js/2.77507cfc.chunk.js"
   },
   {
-    "revision": "89d1684f38b071693e73",
-    "url": "/Teamwork-Frontend/static/js/main.6db9ea19.chunk.js"
+    "revision": "e8ee92558941d50bcf71",
+    "url": "/Teamwork-Frontend/static/js/main.d0de7b51.chunk.js"
   },
   {
     "revision": "6b118f8a973b6ddb376e",
