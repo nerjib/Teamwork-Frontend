@@ -12,7 +12,6 @@ class GetOneGif extends React.Component {
 
         }
       }
-
     componentDidMount() {
       let  obj = {
         method: 'GET',

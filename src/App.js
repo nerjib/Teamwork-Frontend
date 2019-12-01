@@ -9,12 +9,13 @@ import CreateUser from './CreateUser';
 import WithAuthRole from './WithAuthRole';
 import GetOneGif from './GetOneGif';
 import DeleteArticle from './DeleteArticle';
-
+import SignOut from './SignOut';
 
 import './App.css';
 
 function App() {
   return (
+    
     <div className="App">
       <header className="App-header">
       <h1> TeamWork</h1>
@@ -33,6 +34,7 @@ function App() {
           <Route path="/feeds" component={(Home)} />
           <Route path="/create-user" component={WithAuthRole(CreateUser)}/>
           <Route path="/deletearticle/:id" component={(DeleteArticle)}/>
+        <Route path="/signout" component={SignOut}/>
         </Switch>
       </div>
  

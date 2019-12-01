@@ -83,6 +83,7 @@ displayBlock =<GifsList gifslist={this.state.gifslist}/>
             </div>
          <div> private message</div>
          <div> Current Sprint</div>
+         <Link to="/signout">Signout</Link>
           </div>
         </div>
       <div className="Articles-block">
