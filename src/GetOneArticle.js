@@ -14,15 +14,22 @@ class GetOneArticle extends React.Component {
       }
 
     componentDidMount() {
+      let  obj = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'token': localStorage.getItem('token'),
+        }
+      }
         const { params } = this.props.match;
-        fetch("/api/v1/articles/"+params.id)
+        fetch("https://powerful-garden-82332.herokuapp.com/api/v1/articles/"+params.id, obj)
         .then(res => res.json())
       .then(res => this.setState({
         response: res.data.rows,
         articleId: params.id,
       }));
   
-      fetch("/api/v1/articles/"+params.id)
+      fetch("https://powerful-garden-82332.herokuapp.com/api/v1/articles/"+params.id, obj)
       .then(res => res.json())
     .then(res => this.setState({response1: res.data.comments}));
 

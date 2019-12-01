@@ -33,7 +33,6 @@ function App() {
           <Route path="/feeds" component={(Home)} />
           <Route path="/create-user" component={WithAuthRole(CreateUser)}/>
           <Route path="/deletearticle/:id" component={(DeleteArticle)}/>
-
         </Switch>
       </div>
  

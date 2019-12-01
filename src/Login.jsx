@@ -10,6 +10,13 @@ export default class Login extends Component {
       email : '',
       password: '',
       login,
+      token: {
+        status: 'dd',
+        data:{
+          token: 'ttttggdvd',
+          id: 'id'
+        },
+      },
     };
   }
 
@@ -22,22 +29,23 @@ export default class Login extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    fetch('/api/v1/auth/signin', {
+    fetch('https://powerful-garden-82332.herokuapp.com/api/v1/auth/signin', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {
         'Content-Type': 'application/json'
       }
     })
+    .then(res => res.json())
     .then(res => {
-      console.log(res.status);
-      if (res.status === 200) {
+      if (res.status === 'success') {
        // return < Redirect to="/home"/>
-
        this.setState({
-         login: 'pass'
+         login: 'pass',
+         token:  res,
         });
         localStorage.setItem('login', this.state.login);
+        localStorage.setItem('token', res.data.token);
 
        // return < Redirect to="/home"/>
               // this.props.history.push('/home');
@@ -49,16 +57,23 @@ export default class Login extends Component {
     })
     .catch(err => {
       console.error(err);
-      localStorage.setItem('login', 'stop');
-
-      alert('Error logging in please try again');
+       localStorage.setItem('login', 'stop');
+     // return <Redirect to='/home'> </Redirect>
+       alert('Error logging in  please try again');
     });
   }
 
   render() {
+   
     if (this.state.login === 'pass'){
-      return <Redirect to='/home'> </Redirect>
-    }
+   return <Redirect to='/home'> </Redirect>
+ }
+  
+
+    
+      
+   
+    
     return (
       <div >
       <form className="Container" onSubmit={this.onSubmit}>
@@ -83,7 +98,7 @@ export default class Login extends Component {
         /></td></tr>
 <tr><td>        <input type="submit" value="Submit"/>
     </td></tr></table></div>  </form>
-      </div>
+  </div>
     );
   }
 }

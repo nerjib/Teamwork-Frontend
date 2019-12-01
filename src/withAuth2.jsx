@@ -12,7 +12,14 @@ export default function withAuth(ComponentToProtect) {
     }
 
     componentDidMount() {
-      fetch('/api/v1/checktoken')
+      let  obj = {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          'token': localStorage.getItem('token'),
+        }
+      }
+      fetch('https://powerful-garden-82332.herokuapp.com/api/v1/checktoken', obj)
         .then(res => {
           if (res.status === 200) {
             this.setState({ loading: false });

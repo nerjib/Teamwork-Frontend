@@ -12,7 +12,13 @@ export default function withAuthRole(ComponentToProtect) {
     }
 
     componentDidMount() {
-      fetch('/api/v1/checkrole')
+     let obj = {
+        method: 'GET',
+        headers: {
+          'token': localStorage.getItem('token')
+        }
+      }
+      fetch('https://powerful-garden-82332.herokuapp.com/api/v1/checkrole', obj)
         .then(res => {
           if (res.status === 200) {
             this.setState({ loading: false });

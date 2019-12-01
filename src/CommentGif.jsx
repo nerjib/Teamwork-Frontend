@@ -18,11 +18,13 @@ export default class CommentGif extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    fetch('/api/v1/gifs/'+this.props.gifId+'/comment', {
+    fetch('https://powerful-garden-82332.herokuapp.com/api/v1/gifs/'+this.props.gifId+'/comment', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'token': localStorage.getItem('token'),
+
       }
     })
     .then(res => {

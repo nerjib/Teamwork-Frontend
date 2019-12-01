@@ -28,11 +28,12 @@ export default class CreateUser extends Component {
 
   onSubmit = (event) => {
     event.preventDefault();
-    fetch('/api/v1/auth/create-user', {
+    fetch('https://powerful-garden-82332.herokuapp.com/api/v1/auth/create-user', {
       method: 'POST',
       body: JSON.stringify(this.state),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'token': localStorage.getItem('token')
       }
     })
     .then(res => {

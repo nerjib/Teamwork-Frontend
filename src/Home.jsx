@@ -33,11 +33,18 @@ export default class Home extends Component {
   }
   
   componentDidMount() {
-    fetch('/api/v1/articles')
+  let  obj = {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'token': localStorage.getItem('token'),
+      }
+    }
+    fetch('https://powerful-garden-82332.herokuapp.com/api/v1/articles', obj)
       .then(res => res.json())
       .then(res => this.setState({articlelist: res.rows}));
            
-      fetch('/api/v1/gifs')
+      fetch('https://powerful-garden-82332.herokuapp.com/api/v1/gifs', obj)
       .then(res => res.json())
       .then(res => this.setState({gifslist: res.rows}));
       
